@@ -21,4 +21,4 @@ jobs:
       run: sbt 'set scalacOptions += "-g:vars"' compile package
     - name: CheckFiles
       run: |
-        ls -la */*
+        ls -la */**
