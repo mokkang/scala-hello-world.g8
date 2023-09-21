@@ -26,6 +26,7 @@ jobs:
     - name: CheckFiles
       run: |
         ls -la */**
+        touch results.json
         
     - name: Veracode Pipeline-Scan
       # You may pin to the exact commit or the version.
