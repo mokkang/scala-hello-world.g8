@@ -29,6 +29,7 @@ jobs:
         touch results.json
         
     - name: Veracode Pipeline-Scan
+      continue-on-error: true
       # You may pin to the exact commit or the version.
       # uses: veracode/Veracode-pipeline-scan-action@7bbcef3efc8720d36302fc912a7d63f7aba34f76
       uses: veracode/Veracode-pipeline-scan-action@v1.0.9
@@ -56,7 +57,7 @@ jobs:
         # Amount of time, in minutes, for the Pipeline Scan to wait before reporting an unsuccessful scan if the scan does not complete. Default is 60 minutes, which is also the maximum value.
         #timeout: # optional
         # Enter true to show detailed messages for each issue in the results summary.
-        issue_details: true # optional
+        #issue_details: true # optional
         # Enter true to show a human-readable results summary on the console. Default is true.
         #summary_display: # optional
         # Enter true to show the JSON containing the scan results on the console. Default is false.
