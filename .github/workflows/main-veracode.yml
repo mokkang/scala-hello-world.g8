@@ -39,7 +39,7 @@ jobs:
         # Filename of the packaged application to upload and scan.
         file: target/scala-2.12/*.jar
         # GITHUB_TOKEN or a repo scoped PAT.
-        #token: # default is ${{ github.token }}
+        token: ${{ github.token }} # default is ${{ github.token }}
         # Name of the security policy to download as a file. Required only if you want to download the configuration for a custom policy defined by your organization. After downloading the policy, you can provide this file in a subsequent command using the policy_file parameter.
         #request_policy: # optional
         # Fail the pipeline job if the scan finds flaws of the specified severities. Enter a comma-separated list of severities in quotation marks.
@@ -63,7 +63,7 @@ jobs:
         # Enter true to display detailed messages in the scan results. Default is false.
         #verbose: # optional
         # Enter true to save the scan results as a human-readable file. Default is false.
-        summary_output: true # optional
+        #summary_output: true # optional
         # Enter the filename of the scan results summary file. The file is stored in the current directory. Default is results.txt.
         #summary_output_file: # optional
         # Enter true to save the scan results in JSON format. Default is true.
