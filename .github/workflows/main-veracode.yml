@@ -105,7 +105,7 @@ jobs:
       uses: veracode/veracode-sca@v2.1.9
       with:
         # Authorization token to query and create issues
-        #github_token: # default is ${{ github.token }}
+        github_token: ${{ github.token }} # default is ${{ github.token }}
         # Run the SRCCLR with the `--quick` options
         #quick: # optional, default is false
         # Show update advisor
@@ -170,7 +170,7 @@ jobs:
         # specify to scan in a sandbox
         #sandboxid: # optional
         # All top level modules
-        scanallnonfataltoplevelmodules: true # optional
+        #scanallnonfataltoplevelmodules: true # optional
         # platform selected modules
         #selected: # optional
         # selected modules like from previous scan
