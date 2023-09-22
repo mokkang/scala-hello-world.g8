@@ -27,6 +27,7 @@ jobs:
       run: |
         ls -la */**
         touch results.json
+        touch filtered_results.json
         
     - name: Veracode Pipeline-Scan
       continue-on-error: true
@@ -127,6 +128,12 @@ jobs:
         #skip-vms: # optional, default is false
         # Run the SRCCLR with the `--no-graphs` option
         #no-graphs: # optional, default is false
+
+
+    - name: directory
+      run: |
+           ls
+           
     
     - name: Veracode Upload And Scan
       # You may pin to the exact commit or the version.
