@@ -141,7 +141,7 @@ jobs:
       uses: veracode/veracode-uploadandscan-action@0.2.6
       with:
         # appname
-        appname: "Scala" # default is ${{ github.repository }}
+        appname: Scala # default is ${{ github.repository }}
         # createprofile
         createprofile: false # default is true
         # filepath
@@ -176,7 +176,7 @@ jobs:
         # selected modules like from previous scan
         #selectedpreviously: # optional
         # teams
-        teams: "Team 1" # optional
+        teams: Team 1 # optional
         # team
         #toplevel: # optional
         # automatically delete the current scan if there are any errors when uploading files or starting the scan
