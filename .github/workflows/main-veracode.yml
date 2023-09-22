@@ -143,7 +143,7 @@ jobs:
         # appname
         appname: "Scala" # default is ${{ github.repository }}
         # createprofile
-        createprofile: true # default is true
+        createprofile: false # default is true
         # filepath
         filepath: target/scala-2.12/*.jar
         # version
