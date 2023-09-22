@@ -177,7 +177,7 @@ jobs:
         #selectedpreviously: # optional
         # teams
         #teams: # optional
-        # teams
+        # team
         #toplevel: # optional
         # automatically delete the current scan if there are any errors when uploading files or starting the scan
         deleteincompletescan: 2 # optional
