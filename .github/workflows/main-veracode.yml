@@ -24,7 +24,6 @@ jobs:
       # https://docs.veracode.com/r/compilation_scala
       run: |
         sbt package
-        sbt assembly
         sbt 'set scalacOptions += "-g:vars"' compile package
       #  -
       #  touch project/assembly.sbt
