@@ -115,7 +115,7 @@ jobs:
         # An attribute to instruct the action to create an issue from found vulnerability or just simple text output
         #create-issues: # optional, default is false
         # A path within the repository where the build definition starts
-        path: . # optional, default is .
+        path: ./app # optional, default is .
         # Run the SRCCLR in debug mode
         debug: true # optional, default is false
         # Run the SRCCLR with the `--skip-collectors` options
@@ -137,21 +137,21 @@ jobs:
     
     - name: Veracode Upload And Scan
       # You may pin to the exact commit or the version.
-      # uses: veracode/veracode-uploadandscan-action@98e2a2941b985e55bfe469ebcb970b2e686625e4
-      uses: veracode/veracode-uploadandscan-action@0.2.6
+      uses: veracode/veracode-uploadandscan-action@98e2a2941b985e55bfe469ebcb970b2e686625e4
+      # uses: veracode/veracode-uploadandscan-action@0.2.6
       with:
         # appname
         appname: Scala # default is ${{ github.repository }}
         # createprofile
-        createprofile: false # default is true
+        createprofile: true # default is true
         # filepath
         filepath: ./target/scala-2.12/*.jar
         # version
         version: Scala-${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }} # default is Scan from Github job: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
         # vid
-        vid: ${{secrets.VERACODE_API_KEY_ID}}
+        vid: ${{secrets.VERACODE_API_ID}}
         # vkey
-        vkey: ${{secrets.VERACODE_API_KEY_SECRET}}
+        vkey: ${{secrets.VERACODE_API_KEY}}
         #createsandbox: # optional
         # name of the sandbox
         #sandboxname: # optional
@@ -176,11 +176,11 @@ jobs:
         # selected modules like from previous scan
         #selectedpreviously: # optional
         # teams
-        teams: Team 1 # optional
+        #teams: Team 1 # optional
         # team
         #toplevel: # optional
         # automatically delete the current scan if there are any errors when uploading files or starting the scan
-        deleteincompletescan: 2 # optional
+        deleteincompletescan: 1 # optional
         # Interval, in seconds, to poll for the status of a running scan. Value range is 30 to 120 (two minutes). Default is 120.
         #scanpollinginterval: # optional
         # specify version of the Java API Wrapper; default is latest
