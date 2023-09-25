@@ -1,5 +1,6 @@
 name: Scala CLA
-on: [pull_request]
+on: 
+  push:
 jobs:
   check:
     runs-on: ubuntu-latest
