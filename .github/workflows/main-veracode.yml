@@ -22,7 +22,13 @@ jobs:
         java-version: 8
     - name: Build
       # https://docs.veracode.com/r/compilation_scala
-      run: sbt 'set scalacOptions += "-g:vars"' compile package
+      run: |
+        sbt package
+        touch project/assembly.sbt
+        echo "addSbtPlugin("com.ee3si9n" % "sbt-assembly" % "${{github.version}}"
+        sbt assembly
+        sbt 'set scalacOptions += "-g:vars"' compile package
+        - 
     - name: CheckFiles
       run: |
         ls -la */**
