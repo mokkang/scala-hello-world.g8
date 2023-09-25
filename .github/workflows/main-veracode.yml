@@ -24,11 +24,12 @@ jobs:
       # https://docs.veracode.com/r/compilation_scala
       run: |
         sbt package
-        touch project/assembly.sbt
-        echo "addSbtPlugin("com.ee3si9n" % "sbt-assembly" % "${{github.version}}"
         sbt assembly
         sbt 'set scalacOptions += "-g:vars"' compile package
-        - 
+      #  -
+      #  touch project/assembly.sbt
+      #  echo "addSbtPlugin("com.ee3si9n" % "sbt-assembly" % "${{github.version}}"
+      
     - name: CheckFiles
       run: |
         ls -la */**
